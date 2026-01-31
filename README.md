@@ -37,6 +37,7 @@ This tutorial outlines the Setup and options available when setting up an Azure 
   - **Your remaining $200.00 of free credit expires in 30 days. Upgrade to keep going with your account.**
 - Now on the Bottom of the page click **Upgrade to pay as you go**
   - Verify your payment if needed
+  - Exit Azure Portal webpage and re-enter to apply updated subscriptiona
 - Why do we have to do this?
   - Some features are only allowed with pay as you go
   - If you created a new account you will still have your $200 credit for 30 days
@@ -93,19 +94,28 @@ Explanation: A Resource Group is a container that holds resources for Azure proj
 
 Explanation: A Virtual Machine (VM) is a virtual computer that runs an operating system on a remote server, using assigned CPU, memory, and storage resources from said server.
 
+**This will cover Basic configuration for VM creation**
+
 - On Azure Portal: use the search bar
   - Type in "Virtual Machines"
   - Click **Virtual Machine**
 - Click **Create**
   - Click **Virtual Machine**
+- The Right Side of this page will show you the cost for running your VM nonstop for a month
 - Select your Subscription
 - Resource Group: Select the previously created one
-- Virtual Machine name: Enetr your name for the VM
+- Virtual Machine name: Enter your name for the VM
 - Choose Region: Select the same region as the Resource Group
-- Choose Zone Options: Self Selected or Azure-Selected
+- Availabilty Option: How the VM will be hosted
+  - Avaialalbity Zone: Select a zone within a region for where you VM will be hosted
+  - VM Scale Set: VM will be hosted acorss multiple zones and fault domains
+      - Fault Domains are points of failure for server racks
+  - 
+- If Zone options → Avaialalbity Zone: Self Selected or Azure-Selected
   - Regions are broken into smaller sections known as availablity zones
   - Self-Selected: will allow you to select your Availablity Zone
   - Azure-Selected: Azure will select what it believes is optimal
+- If Zone options → Avaialalbity Zone:
 - Choose Security Type: Trusted Launch vs Standard
   - Standard: Will provide just basic security options
   - Trusted Launch: Allows for Secure Boot & virtual Trusted Platform Module
@@ -118,6 +128,30 @@ Explanation: A Virtual Machine (VM) is a virtual computer that runs an operating
 - Choose VM Archiecture: Type of CPU
   - Arm64: this is the CPU architecture used on Mobile Devices and Laptops
   - x64: What you will find in most Desktops
+- Size: How many CPU cores and Ram VM will have
+  - Azure will automatically generate the standard for your selected Image
+  - Click the drop down and click **See all sizes** if you want to change this
+- Enter a Username
+- Enter a Password
+- Public inbound ports
+  - None: will block all trafic by default
+  - Allow Selected Ports: Allows you to select port that will be used for inbound traffic
+- Agree to Licensing Agreement
+- Click **Review + Create**
+- Review your options then Click **Create**
+- Wait while VM is Deploying
 
+<img width="609" height="725" alt="step3" src="https://github.com/user-attachments/assets/e0747861-fe56-415a-a429-b4af43126e5a" />
 
+<img width="1907" height="907" alt="step3-2" src="https://github.com/user-attachments/assets/eec0911f-d60f-493f-a229-4c45763c013d" />
+
+<img width="1906" height="727" alt="step3-3" src="https://github.com/user-attachments/assets/ee0e25d6-9802-4fd5-a729-79f73fc832bb" />
+
+<img width="444" height="827" alt="step3-4" src="https://github.com/user-attachments/assets/d31f1db1-f45a-458e-9673-60bb6e4b62c2" />
+
+<img width="914" height="866" alt="step3-5" src="https://github.com/user-attachments/assets/a6377b02-7260-4b8c-a71f-a46410855547" />
+
+<img width="697" height="531" alt="step3-6" src="https://github.com/user-attachments/assets/69ab7b7d-c411-44a2-b097-d9817f965329" />
+
+<img width="1909" height="927" alt="step3-7" src="https://github.com/user-attachments/assets/b87538f9-9e1a-49b4-a40e-70f59b9eb2c4" />
 
