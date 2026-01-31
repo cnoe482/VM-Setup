@@ -90,7 +90,7 @@ Explanation: A Resource Group is a container that holds resources for Azure proj
 
 <img width="1325" height="833" alt="Step 2-5" src="https://github.com/user-attachments/assets/855251b7-2188-4ade-b986-0fdfdaa4baa6" />
 
-<h1>Step 3 - Virtual Machine</h1>
+<h1>Step 3 - Virtual Machine (VM) Setup</h1>
 
 Explanation: A Virtual Machine (VM) is a virtual computer that runs an operating system on a remote server, using assigned CPU, memory, and storage resources from said server.
 
@@ -110,15 +110,17 @@ Explanation: A Virtual Machine (VM) is a virtual computer that runs an operating
   - Avaialalbity Zone: Select a zone within a region for where you VM will be hosted
   - VM Scale Set: VM will be hosted acorss multiple zones and fault domains
       - Fault Domains are points of failure for server racks
-  - 
+      - Requires extra setup
+  - Availability Set: Axure will automatically distribute VM acorss zones and fault domains
+      - Requires extra setup
 - If Zone options → Avaialalbity Zone: Self Selected or Azure-Selected
   - Regions are broken into smaller sections known as availablity zones
   - Self-Selected: will allow you to select your Availablity Zone
   - Azure-Selected: Azure will select what it believes is optimal
 - If Zone options → Avaialalbity Zone:
 - Choose Security Type: Trusted Launch vs Standard
-  - Standard: Will provide just basic security options
-  - Trusted Launch: Allows for Secure Boot & virtual Trusted Platform Module
+- Standard: Provides default Azure security features without advanced boot protections.
+- Trusted Launch: Enables Secure Boot and virtual TPM (vTPM) for enhanced security.
     - Secure Boot ensures that only trusted, digitally signed software is allowed to run on computer startup.
     - Trusted Platform Module (TPM) stores and manages encryption keys to help secure sensitive data.
 - Choose Image: What Operating System you will be using
@@ -126,9 +128,9 @@ Explanation: A Virtual Machine (VM) is a virtual computer that runs an operating
   - Windows 11 pro is standard windows
   - Windows Server 2025 is a windows server
 - Choose VM Archiecture: Type of CPU
-  - Arm64: this is the CPU architecture used on Mobile Devices and Laptops
-  - x64: What you will find in most Desktops
-- Size: How many CPU cores and Ram VM will have
+  - ARM64: Energy-efficient CPU architecture commonly used in mobile devices
+  - x64: Traditional CPU architecture used in most desktops, servers
+- Size: How many CPU cores and how much Ram VM will have
   - Azure will automatically generate the standard for your selected Image
   - Click the drop down and click **See all sizes** if you want to change this
 - Enter a Username
@@ -140,6 +142,8 @@ Explanation: A Virtual Machine (VM) is a virtual computer that runs an operating
 - Click **Review + Create**
 - Review your options then Click **Create**
 - Wait while VM is Deploying
+- When Deployment is finished Click **Go to resource**
+- Now you should be able to see a breakdown of your VM 
 
 <img width="609" height="725" alt="step3" src="https://github.com/user-attachments/assets/e0747861-fe56-415a-a429-b4af43126e5a" />
 
@@ -154,4 +158,40 @@ Explanation: A Virtual Machine (VM) is a virtual computer that runs an operating
 <img width="697" height="531" alt="step3-6" src="https://github.com/user-attachments/assets/69ab7b7d-c411-44a2-b097-d9817f965329" />
 
 <img width="1909" height="927" alt="step3-7" src="https://github.com/user-attachments/assets/b87538f9-9e1a-49b4-a40e-70f59b9eb2c4" />
+
+<img width="751" height="397" alt="step3-8" src="https://github.com/user-attachments/assets/5fdba343-4c17-4aba-b395-40936fbe0733" />
+
+<img width="1892" height="919" alt="step3-9" src="https://github.com/user-attachments/assets/e6123f5e-7039-4d58-8d20-8baa15ebd241" />
+
+<h1>Step 4 - Accessing your VM</h1>
+
+- Now if you are on MAC Follow these steps
+  - Access the MAC app store
+  - Download **Microsoft Remote Desktop**
+  - Open the newly downloaded software
+- On windows follow these steps
+  - On windows search bar type "Remote desktop connection"
+  - Click **Remote Desktop Connection** (RDC)
+- Now pull up your VM overview
+  - Find your public IP address
+- Now on RDC for Computer fill in the Public IP for your VM
+- Click **Show Options**
+  - Fill in Username with what you used for your VM
+  - Click **Connect**
+- A pop up asking for a password should appear
+  - Use the password you used when creating your VM
+- Another pop up will appear asking if you want to connect click **Yes**
+  
+<img width="773" height="780" alt="Step4" src="https://github.com/user-attachments/assets/e5a7474d-bdd0-4326-aeb2-3025006110d4" />
+
+<img width="1904" height="912" alt="step4-1" src="https://github.com/user-attachments/assets/14eeca24-635c-4cb1-b91b-9623b650dc5e" />
+
+<img width="391" height="398" alt="step4-2" src="https://github.com/user-attachments/assets/22becfa2-90c5-48bd-80ff-47785b07676b" />
+
+<h1>Step 5 -Congradulations</h1>
+
+- You have created and accessed your new Virtual Machine
+- Follow the setup options and enjoy
+  
+<img width="1914" height="1075" alt="Step5" src="https://github.com/user-attachments/assets/a904eaf9-2f17-437a-a545-8daa5877197d" />
 
