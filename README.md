@@ -1,47 +1,49 @@
 <p align="center">
+
 <img width="354" height="383" alt="azvm" src="https://github.com/user-attachments/assets/9603c62e-2994-4ef1-a933-93180870dab2" />
+
 </p>
 
 <h1>Azure Virtual Machine - Setup</h1>
-This tutorial outlines the Setup and options available when setting up an Azure Virtual Machine.<br />
+
+This guide demonstrates how to create and configure an Azure Virtual Machine, explaining key configuration options.<br />
 
 <h2>Environments and Technologies Used</h2>
 
-- Web Browser
-- Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
+* Web Browser
+* Microsoft Azure (Virtual Machines/Compute)
+* Remote Desktop
 
 <h2>Operating Systems Used </h2>
 
-- Windows 11 Pro
+* Windows 11 Pro
 
 <h2>List of Prerequisites</h2>
 
-- Microsoft Azure account
-- Windows 11 Virtual Machine
-- Remote Desktop Client
+* Microsoft Azure account
+* Internet connection
+* Remote Desktop Client
 
 <h1>Step 1 - Create an Azure account</h1>
 
-- <a href="https://azure.microsoft.com/en-us">Azure Website Link</a>
-- Click **Get started with Azure**
-- Click **Try Azure for free**
-- Either Sign in with your existing Microsoft account or create one
-- Follow prompts for creating your Azure account
-- You should now be in the Azure Portal
-- On Azure Portal: use the search bar
-  - Type in "Subscriptions"
-  - Click **Subscriptions**
-- Select your subscription
-- One the top you should see this message Click it
-  - **Your remaining $200.00 of free credit expires in 30 days. Upgrade to keep going with your account.**
-- Now on the Bottom of the page click **Upgrade to pay as you go**
-  - Verify your payment if needed
-  - Exit Azure Portal webpage and re-enter to apply updated subscriptiona
-- Why do we have to do this?
-  - Some features are only allowed with pay as you go
-  - If you created a new account you will still have your $200 credit for 30 days
-
+* Azure Website Link
+* Click Get started with Azure
+* Click Try Azure for free
+* Either sign in with your existing Microsoft account or create one
+* Follow prompts for creating your Azure account
+* You should now be in the Azure Portal
+* On Azure Portal: use the search bar
+  * Type in “Subscriptions”
+  * Click Subscriptions
+* Select your subscription
+* On the top, you should see this message. Click it
+  * Your remaining $200.00 of free credit expires in 30 days. Upgrade to keep going with your account.
+* Now on the Bottom of the page, click Upgrade to pay as you go
+  * Verify your payment if needed
+  * Exit the Azure Portal webpage and re-enter to apply the updated subscription
+* Why do we have to do this?
+  * Some features are only allowed with pay-as-you-go
+  * If you created a new account, you will still have your $200 credit for 30 days
 
 <img width="1909" height="846" alt="Step 1" src="https://github.com/user-attachments/assets/7a441e09-c92b-4dbd-8d46-3588fa6433b7" />
 
@@ -57,26 +59,25 @@ This tutorial outlines the Setup and options available when setting up an Azure 
 
 <h1>Step 2 - Resource Group</h1>
 
+Explanation: A Resource Group is a container that holds resources for Azure projects. This makes it easier to organize, manage, or delete these resources. Projects must have a resource group to create and manage their services.
 
-Explanation: A Resource Group is a container that holds resources for Azure projects. This makes it easier to organize, manage, or delete these resources. Projects must have a resource group to create and manage its services.
-
-- On Azure Portal: use the search bar
-  - Type in "Resource Group"
-  - Click **Resource Groups**
-- On the Resource Group Page
-  - Click **Create**
-  - Select your subscription (Default for a new account will be "Azure Subscription 1")
-  - Name your Resource Group
-  - Select a region. Recommend staying in your country for lower latency
-    - Region will determine where the server that host your resource group will be
-  - Click Review + Create
-  - Confirm Settings
-  - Click Create
-- View Resource Group
-  - Wait a moment and click refresh
-  - You should see your Resource Group Now
-  - Click your Resource group
-  - Here you can view the Resources in your group
+* On Azure Portal: use the search bar
+  * Type in “Resource Group”
+  * Click Resource Groups
+* On the Resource Group Page
+  * Click Create
+  * Select your subscription (Default for a new account will be “Azure Subscription 1”)
+  * Name your Resource Group
+  * Select a region. Recommend staying in your country for lower latency
+    * Region will determine where the server that hosts your resource group will be
+  * Click Review + Create
+  * Confirm Settings
+  * Click Create
+* View Resource Group
+  * Wait a moment and click refresh
+  * You should see your Resource Group Now
+  * Click your Resource group
+  * Here you can view the Resources in your group
 
 <img width="842" height="675" alt="Step 2" src="https://github.com/user-attachments/assets/8c51dd0e-35cd-478e-876e-e4567ed17021" />
 
@@ -94,56 +95,56 @@ Explanation: A Resource Group is a container that holds resources for Azure proj
 
 Explanation: A Virtual Machine (VM) is a virtual computer that runs an operating system on a remote server, using assigned CPU, memory, and storage resources from said server.
 
-**This will cover Basic configuration for VM creation**
+This will cover the basic configuration for VM creation
 
-- On Azure Portal: use the search bar
-  - Type in "Virtual Machines"
-  - Click **Virtual Machine**
-- Click **Create**
-  - Click **Virtual Machine**
-- The Right Side of this page will show you the cost for running your VM nonstop for a month
-- Select your Subscription
-- Resource Group: Select the previously created one
-- Virtual Machine name: Enter your name for the VM
-- Choose Region: Select the same region as the Resource Group
-- Availabilty Option: How the VM will be hosted
-  - Avaialalbity Zone: Select a zone within a region for where you VM will be hosted
-  - VM Scale Set: VM will be hosted acorss multiple zones and fault domains
-      - Fault Domains are points of failure for server racks
-      - Requires extra setup
-  - Availability Set: Axure will automatically distribute VM acorss zones and fault domains
-      - Requires extra setup
-- If Zone options → Avaialalbity Zone: Self Selected or Azure-Selected
-  - Regions are broken into smaller sections known as availablity zones
-  - Self-Selected: will allow you to select your Availablity Zone
-  - Azure-Selected: Azure will select what it believes is optimal
-- If Zone options → Avaialalbity Zone:
-- Choose Security Type: Trusted Launch vs Standard
-- Standard: Provides default Azure security features without advanced boot protections.
-- Trusted Launch: Enables Secure Boot and virtual TPM (vTPM) for enhanced security.
-    - Secure Boot ensures that only trusted, digitally signed software is allowed to run on computer startup.
-    - Trusted Platform Module (TPM) stores and manages encryption keys to help secure sensitive data.
-- Choose Image: What Operating System you will be using
-  - Ubuntu is Linux
-  - Windows 11 pro is standard windows
-  - Windows Server 2025 is a windows server
-- Choose VM Archiecture: Type of CPU
-  - ARM64: Energy-efficient CPU architecture commonly used in mobile devices
-  - x64: Traditional CPU architecture used in most desktops, servers
-- Size: How many CPU cores and how much Ram VM will have
-  - Azure will automatically generate the standard for your selected Image
-  - Click the drop down and click **See all sizes** if you want to change this
-- Enter a Username
-- Enter a Password
-- Public inbound ports
-  - None: will block all trafic by default
-  - Allow Selected Ports: Allows you to select port that will be used for inbound traffic
-- Agree to Licensing Agreement
-- Click **Review + Create**
-- Review your options then Click **Create**
-- Wait while VM is Deploying
-- When Deployment is finished Click **Go to resource**
-- Now you should be able to see a breakdown of your VM 
+* On Azure Portal: use the search bar
+  * Type in “Virtual Machines”
+  * Click Virtual Machine
+* Click Create
+  * Click Virtual Machine
+* The Right Side of this page will show you the cost for running your VM nonstop for a month
+* Select your Subscription
+* Resource Group: Select the previously created one
+* Virtual Machine name: Enter your name for the VM
+* Choose Region: Select the same region as the Resource Group
+* Availability Option: How the VM will be hosted
+  * Availability Zone: Select a zone within a region where your VM will be hosted
+  * VM Scale Set: VM will be hosted across multiple zones and fault domains
+    * Fault Domains are points of failure for server racks
+    * Requires extra setup
+  * Availability Set: Axure will automatically distribute VM acorss zones and fault domains
+    * Requires extra setup
+* If Zone options → Availability Zone: Self-Selected or Azure-Selected
+  * Regions are broken into smaller sections known as Availability zones
+  * Self-Selected: will allow you to select your Availability Zone
+  * Azure-Selected: Azure will select what it believes is optimal
+* If Zone options → Availability Zone:
+* Choose Security Type: Trusted Launch vs Standard
+* Standard: Provides default Azure security features without advanced boot protections.
+* Trusted Launch: Enables Secure Boot and virtual TPM (vTPM) for enhanced security.
+  * Secure Boot ensures that only trusted, digitally signed software is allowed to run on the computer startup.
+  * Trusted Platform Module (TPM) stores and manages encryption keys to help secure sensitive data.
+* Choose Image: What Operating System you will be using
+  * Ubuntu is Linux
+  * Windows 11 Pro is standard Windows
+  * Windows Server 2025 is a Windows server
+* Choose VM Architecture: Type of CPU
+  * ARM64: Energy-efficient CPU architecture commonly used in mobile devices
+  * x64: Traditional CPU architecture used in most desktops and servers
+* Size: How many CPU cores and how much Ram VM will have
+  * Azure will automatically generate the standard for your selected Image
+  * Click the drop-down and click See all sizes if you want to change this
+* Enter a Username
+* Enter a Password
+* Public inbound ports
+  * None: will block all traffic by default
+  * Allow Selected Ports: Allows you to select the port that will be used for inbound traffic
+* Agree to the Licensing Agreement
+* Click Review + Create
+* Review your options, then Click Create
+* Wait while the VM is Deploying
+* When Deployment is finished, click Go to resource
+* Now you should be able to see a breakdown of your VM
 
 <img width="609" height="725" alt="step3" src="https://github.com/user-attachments/assets/e0747861-fe56-415a-a429-b4af43126e5a" />
 
@@ -165,23 +166,23 @@ Explanation: A Virtual Machine (VM) is a virtual computer that runs an operating
 
 <h1>Step 4 - Accessing your VM</h1>
 
-- Now if you are on MAC Follow these steps
-  - Access the MAC app store
-  - Download **Microsoft Remote Desktop**
-  - Open the newly downloaded software
-- On windows follow these steps
-  - On windows search bar type "Remote desktop connection"
-  - Click **Remote Desktop Connection** (RDC)
-- Now pull up your VM overview
-  - Find your public IP address
-- Now on RDC for Computer fill in the Public IP for your VM
-- Click **Show Options**
-  - Fill in Username with what you used for your VM
-  - Click **Connect**
-- A pop up asking for a password should appear
-  - Use the password you used when creating your VM
-- Another pop up will appear asking if you want to connect click **Yes**
-  
+* Now, if you are on MAC Follow these steps
+  * Access the MAC app store
+  * Download Microsoft Remote Desktop
+  * Open the newly downloaded software
+* On windows follow these steps
+  * On windows search bar, type “Remote Desktop Connection”
+  * Click Remote Desktop Connection (RDC)
+* Now pull up your VM overview
+  * Find your public IP address
+* Now on RDC for Computer, fill in the Public IP for your VM
+* Click Show Options
+  * Fill in Username with what you used for your VM
+  * Click Connect
+* A pop-up asking for a password should appear
+  * Use the password you used when creating your VM
+* Another pop-up will appear asking if you want to connect. Click Yes
+
 <img width="773" height="780" alt="Step4" src="https://github.com/user-attachments/assets/e5a7474d-bdd0-4326-aeb2-3025006110d4" />
 
 <img width="1904" height="912" alt="step4-1" src="https://github.com/user-attachments/assets/14eeca24-635c-4cb1-b91b-9623b650dc5e" />
@@ -190,8 +191,7 @@ Explanation: A Virtual Machine (VM) is a virtual computer that runs an operating
 
 <h1>Step 5 -Congradulations</h1>
 
-- You have created and accessed your new Virtual Machine
-- Follow the setup options and enjoy
-  
-<img width="1914" height="1075" alt="Step5" src="https://github.com/user-attachments/assets/a904eaf9-2f17-437a-a545-8daa5877197d" />
+* You have created and accessed your new Virtual Machine
+* Follow the setup options and enjoy
 
+<img width="1914" height="1075" alt="Step5" src="https://github.com/user-attachments/assets/a904eaf9-2f17-437a-a545-8daa5877197d" />
