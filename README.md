@@ -24,11 +24,23 @@ This tutorial outlines the Setup and options available when setting up an Azure 
 <h1>Step 1 - Create an Azure account</h1>
 
 - <a href="https://azure.microsoft.com/en-us">Azure Website Link</a>
-- Click "Get started with Azure"
-- Click "Try Azure for free"
+- Click **Get started with Azure**
+- Click **Try Azure for free**
 - Either Sign in with your existing Microsoft account or create one
 - Follow prompts for creating your Azure account
 - You should now be in the Azure Portal
+- On Azure Portal: use the search bar
+  - Type in "Subscriptions"
+  - Click **Subscriptions**
+- Select your subscription
+- One the top you should see this message Click it
+  - **Your remaining $200.00 of free credit expires in 30 days. Upgrade to keep going with your account.**
+- Now on the Bottom of the page click **Upgrade to pay as you go**
+  - Verify your payment if needed
+- Why do we have to do this?
+  - Some features are only allowed with pay as you go
+  - If you created a new account you will still have your $200 credit for 30 days
+
 
 <img width="1909" height="846" alt="Step 1" src="https://github.com/user-attachments/assets/7a441e09-c92b-4dbd-8d46-3588fa6433b7" />
 
@@ -36,18 +48,25 @@ This tutorial outlines the Setup and options available when setting up an Azure 
 
 <img width="1906" height="941" alt="step 1-3" src="https://github.com/user-attachments/assets/8aae662c-2c2a-4361-bd7e-1ec671b608ba" />
 
+<img width="1881" height="333" alt="step1-4" src="https://github.com/user-attachments/assets/a0570ca4-d9ed-4cc0-8aaa-421fefd5230d" />
+
+<img width="1471" height="807" alt="step1-5" src="https://github.com/user-attachments/assets/406a8338-f952-4875-8299-9364f2b91d31" />
+
+<img width="857" height="947" alt="step1-6" src="https://github.com/user-attachments/assets/82f3474a-3b17-4983-b339-b2101d5c6668" />
+
 <h1>Step 2 - Resource Group</h1>
+
 
 Explanation: A Resource Group is a container that holds resources for Azure projects. This makes it easier to organize, manage, or delete these resources. Projects must have a resource group to create and manage its services.
 
 - On Azure Portal: use the search bar
   - Type in "Resource Group"
-  - Click Resource Groups
+  - Click **Resource Groups**
 - On the Resource Group Page
-  - Click Create
+  - Click **Create**
   - Select your subscription (Default for a new account will be "Azure Subscription 1")
   - Name your Resource Group
-  - For region select wherever you want recomend staying in the same country
+  - Select a region. Recommend staying in your country for lower latency
     - Region will determine where the server that host your resource group will be
   - Click Review + Create
   - Confirm Settings
@@ -70,6 +89,35 @@ Explanation: A Resource Group is a container that holds resources for Azure proj
 
 <img width="1325" height="833" alt="Step 2-5" src="https://github.com/user-attachments/assets/855251b7-2188-4ade-b986-0fdfdaa4baa6" />
 
+<h1>Step 3 - Virtual Machine</h1>
+
+Explanation: A Virtual Machine (VM) is a virtual computer that runs an operating system on a remote server, using assigned CPU, memory, and storage resources from said server.
+
+- On Azure Portal: use the search bar
+  - Type in "Virtual Machines"
+  - Click **Virtual Machine**
+- Click **Create**
+  - Click **Virtual Machine**
+- Select your Subscription
+- Resource Group: Select the previously created one
+- Virtual Machine name: Enetr your name for the VM
+- Choose Region: Select the same region as the Resource Group
+- Choose Zone Options: Self Selected or Azure-Selected
+  - Regions are broken into smaller sections known as availablity zones
+  - Self-Selected: will allow you to select your Availablity Zone
+  - Azure-Selected: Azure will select what it believes is optimal
+- Choose Security Type: Trusted Launch vs Standard
+  - Standard: Will provide just basic security options
+  - Trusted Launch: Allows for Secure Boot & virtual Trusted Platform Module
+    - Secure Boot ensures that only trusted, digitally signed software is allowed to run on computer startup.
+    - Trusted Platform Module (TPM) stores and manages encryption keys to help secure sensitive data.
+- Choose Image: What Operating System you will be using
+  - Ubuntu is Linux
+  - Windows 11 pro is standard windows
+  - Windows Server 2025 is a windows server
+- Choose VM Archiecture: Type of CPU
+  - Arm64: this is the CPU architecture used on Mobile Devices and Laptops
+  - x64: What you will find in most Desktops
 
 
 
